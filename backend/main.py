@@ -18,10 +18,8 @@ db = firestore.client()
 # Load HuggingFace Phi-4 model and pipeline
 pipe = pipeline(
     "text-generation",
-    model="microsoft/Phi-4-reasoning-plus",
-    torch_dtype=torch.bfloat16 if torch.cuda.is_available() else torch.float32,
-    device=0 if torch.cuda.is_available() else -1,
-    max_new_tokens=256,
+    model="Qwen/Qwen2.5-0.5B-Instruct",
+    max_new_tokens=128,
 )
 llm = HuggingFacePipeline(pipeline=pipe)
 
