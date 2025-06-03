@@ -6,7 +6,7 @@ const ROLES = {
   USER: 'user' as 'user',
 }
 
-const API_URL = importmeta.env.VITE_API_URL || 'http://localhost:8080/chat'
+const API_URL = import.meta.env.VITE_API_URL || 'http://localhost:8080/chat'
 
 type RoleType = 'admin' | 'user'
 
