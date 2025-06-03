@@ -8,9 +8,17 @@ from transformers import pipeline
 from langchain.prompts import PromptTemplate
 from langchain_community.llms import HuggingFacePipeline
 import torch
+import tempfile
 
 # Load Firestore credentials
-cred = credentials.Certificate(os.path.join(os.path.dirname(__file__), "firebase-service-account.json"))
+firebase_creds = os.environ.get("FIREBASE_CREDENTIALS_JSON")
+if firebase_creds:
+    with tempfile.NamedTemporaryFile(delete=False, mode='w', suffix='.json') as f:
+        f.write(firebase_creds)
+        cred_path = f.name
+    cred = credentials.Certificate(cred_path)
+else:
+    cred = credentials.Certificate(os.path.join(os.path.dirname(__file__), "firebase-service-account.json"))
 if not firebase_admin._apps:
     firebase_admin.initialize_app(cred)
 db = firestore.client()
