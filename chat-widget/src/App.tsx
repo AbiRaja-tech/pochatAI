@@ -23,7 +23,7 @@ async function fetchBotResponse(message: string) {
 
 function App() {
   // For demo: allow switching roles
-  const [role, setRole] = useState<RoleType>(ROLES.USER)
+  const [role, _setRole] = useState<RoleType>(ROLES.USER)
   const [open, setOpen] = useState(false)
   const [messages, setMessages] = useState([
     { from: 'bot', text: 'Hi! How can I help you with your purchase orders today?', type: 'info' }
