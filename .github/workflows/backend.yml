@@ -39,6 +39,6 @@ jobs:
             --region ${{ env.REGION }} \
             --platform managed \
             --allow-unauthenticated \
-             --cpu=1 \
+            --cpu=1 \
             --memory=2Gi \
-            --set-env-vars FIREBASE_CREDENTIALS_JSON='${{ secrets.FIREBASE_CREDENTIALS_JSON }}'
+            --set-env-vars=FIREBASE_CREDENTIALS_JSON=${{ secrets.FIREBASE_CREDENTIALS_JSON }}
