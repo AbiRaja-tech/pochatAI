@@ -47,17 +47,19 @@ CI/CD	CircleCI + Google Cloud Build
 Monitoring	GCP Monitoring + Logging (optionally Prometheus/Grafana)
 
 🛠️ Development Roadmap
-Phase	Description	Status
-1	🧱 Widget UI - Embed + Click-to-Expand	✅ Done / 🔄 In Progress
-2	🔌 Firebase Auth Integration	🔄 In Progress
-3	🗣️ Chat API - Firestore Q&A (admin/user)	🔲 Pending
-4	📦 Dockerize Microservices (Chat + Analytics)	🔲 Pending
-5	☁️ Deploy to Cloud Run (GCP)	🔲 Pending
-6	🔁 Setup CI/CD with CircleCI + Cloud Build	🔲 Pending
-7	📊 Add Analytics + Basic Prediction	🔲 Planned
-8	🧠 Integrate Vertex AI / Gemini / LangChain	🔲 Planned
-9	📡 Monitoring Dashboard (GCP Logs, Metrics)	🔲 Planned
-10	🧪 Final Testing & Production Handoff	🔲 Planned
+
+| Phase | Description | Status |
+|-------|-------------|--------|
+| 1 | 🧱 Widget UI - Embed + Click-to-Expand | ✅ Done / 🔄 In Progress |
+| 2 | 🔌 Firebase Auth Integration | 🔄 In Progress |
+| 3 | 🗣️ Chat API - Firestore Q&A (admin/user) | ⏳ Pending |
+| 4 | 📦 Dockerize Microservices (Chat + Analytics) | ⏳ Pending |
+| 5 | ☁️ Deploy to Cloud Run (GCP) | ⏳ Pending |
+| 6 | 🔁 Setup CI/CD with CircleCI + Cloud Build | ⏳ Pending |
+| 7 | 📊 Add Analytics + Basic Prediction | 📝 Planned |
+| 8 | 🧠 Integrate Vertex AI / Gemini / LangChain | 📝 Planned |
+| 9 | 📡 Monitoring Dashboard (GCP Logs, Metrics) | 📝 Planned |
+| 10 | 🧪 Final Testing & Production Handoff | 📝 Planned |
 
 Track all updates via Git commits + GitHub Projects board (or Issues).
 
