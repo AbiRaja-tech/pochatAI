@@ -1,0 +1,38 @@
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.Python
+env/
+.venv/
+venv/
+ENV/
+env.bak/
+venv.bak/
+
+# VSCode and IDEs
+.vscode/
+.idea/
+.DS_Store
+
+# Node/Frontend
+node_modules/
+dist/
+build/
+
+# Logs
+*.log
+
+# Service account keys and secrets
+*key.json
+firebase-service-account.json
+
+# OS files
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+
+# Ignore backend build artifacts
+backend/__pycache__/
+backend/*.pyc

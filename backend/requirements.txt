@@ -1,0 +1,8 @@
+fastapi
+uvicorn
+google-cloud-firestore
+python-dotenv
+firebase-admin
+torch
+transformers
+langchain

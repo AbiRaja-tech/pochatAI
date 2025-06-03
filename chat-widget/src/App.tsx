@@ -6,7 +6,20 @@ const ROLES = {
   USER: 'user' as 'user',
 }
 
+const API_URL = importmeta.env.VITE_API_URL || 'http://localhost:8080/chat'
+
 type RoleType = 'admin' | 'user'
+
+async function fetchBotResponse(message: string) {
+  const response = await fetch(`${API_URL}/chat`, {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({ user_id: "user_001", query: message }),
+  });
+  const data = await response.json();
+  console.log("Bot API response:", data);
+  return data.response;
+}
 
 function App() {
   // For demo: allow switching roles
@@ -24,24 +37,15 @@ function App() {
     }
   }, [messages, open])
 
-  const handleSend = () => {
+  const handleSend = async () => {
     if (!input.trim()) return
     setMessages([...messages, { from: role, text: input, type: 'user' }])
     setInput('')
-    // Simulate bot response with role-based logic
-    setTimeout(() => {
-      if (role === ROLES.ADMIN && input.toLowerCase().includes('analytics')) {
-        setMessages(msgs => [
-          ...msgs,
-          { from: 'bot', text: 'Here is your advanced analytics dashboard. [Demo: Only admins see this!]', type: 'admin-action' }
-        ])
-      } else {
-        setMessages(msgs => [
-          ...msgs,
-          { from: 'bot', text: "I'm just a demo bot!", type: 'info' }
-        ])
-      }
-    }, 600)
+    const botReply = await fetchBotResponse(input)
+    setMessages(msgs => [
+      ...msgs,
+      { from: 'bot', text: botReply, type: 'info' }
+    ])
   }
 
   // Minimalistic chat icon (SVG)
