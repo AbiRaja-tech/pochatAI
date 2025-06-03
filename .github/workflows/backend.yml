@@ -39,4 +39,4 @@ jobs:
             --region ${{ env.REGION }} \
             --platform managed \
             --allow-unauthenticated \
-            --memory=8Gi
+            --memory=4Gi
