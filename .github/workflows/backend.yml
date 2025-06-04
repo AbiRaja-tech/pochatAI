@@ -40,5 +40,6 @@ jobs:
             --platform managed \
             --allow-unauthenticated \
             --cpu=1 \
-            --memory=2Gi \
+            --memory=4Gi \
             --set-env-vars=FIREBASE_CREDENTIALS_JSON=${{ secrets.FIREBASE_CREDENTIALS_JSON }}
+        # If you still hit memory or performance issues, try increasing --cpu to 2 or higher.
