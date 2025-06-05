@@ -23,10 +23,10 @@ if not firebase_admin._apps:
     firebase_admin.initialize_app(cred)
 db = firestore.client()
 
-# Load HuggingFace Phi-4 model and pipeline
+# Load HuggingFace Gemma-3-1b-it model and pipeline
 pipe = pipeline(
     "text-generation",
-    model="Qwen/Qwen2.5-0.5B-Instruct",
+    model="google/gemma-3-1b-it",
     max_new_tokens=128,
 )
 llm = HuggingFacePipeline(pipeline=pipe)
